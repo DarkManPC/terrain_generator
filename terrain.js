@@ -17,8 +17,8 @@ class Terrain{
 
     deplacement(){
         for(var i = 0; i < this.X; i++){
-            for(var j = 1; j < this.Y; j++){
-                this.vertices[i][j]=createVector(this.vertices[i][j-1].x, this.vertices[i][j-1].y, this.vertices[i][j-1].z);
+            for(var j = 0; j < this.Y-1; j++){
+                this.vertices[i][j]=createVector(this.vertices[i][j+1].x, this.vertices[i][j+1].y, this.vertices[i][j+1].z);
             }
         }
         for(var i = 0; i < this.X; i++){
