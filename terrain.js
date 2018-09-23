@@ -15,6 +15,19 @@ class Terrain{
         }
     }
 
+    deplacement(){
+        for(var i = 0; i < this.vertices.length; i++){
+            for(var j = 0; j < this.vertices.length; j++){
+                if(j==this.vertices.length-1){
+                    this.vertices[i][j] = createVector(i,j,Math.floor(Math.random() * Math.floor(2))-1);
+                }
+                else {
+                    this.vertices[i][j]=this.vertices[i+1][j+1];
+                }
+            }
+    }
+}
+
     show(w,h){
         strokeWeight(3);
         noFill();
