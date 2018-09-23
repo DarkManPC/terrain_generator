@@ -10,7 +10,7 @@ class Terrain{
         for(var i = 0; i < this.X; i++){
             this.vertices[i] = [];
             for(var j = 0; j < this.Y; j++){
-                this.vertices[i][j] = createVector(i,j,0);
+                this.vertices[i][j] = createVector(i,j,random(10,50));
             }
         }
     }
@@ -18,12 +18,20 @@ class Terrain{
     show(w,h){
         strokeWeight(3);
         noFill();
-        beginShape(TRIANGLES);
-        for(var i = 0; i < this.X; i++){
-            for(var j = 0; j < this.Y; j++){
-                vertex(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, -10);
+        for(var i = 0; i < this.X-1; i++){
+            for(var j = 0; j < this.Y-1; j++){
+                this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
+                    this.vertices[i][j+1].x*w/this.X, this.vertices[i][j+1].y*h/this.Y, this.vertices[i][j+1].z);
+                this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
+                    this.vertices[i+1][j].x*w/this.X, this.vertices[i+1][j].y*h/this.Y, this.vertices[i+1][j].z);
             }
         }
-        endShape();
     }
+
+    drawLine(x1, y1, z1, x2,y2, z2){
+        beginShape();
+        vertex(x1,y1,z1);
+        vertex(x2,y2,z2);  
+        endShape();
+      }
 }
