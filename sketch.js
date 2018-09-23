@@ -16,7 +16,7 @@ function setup(){
 
 function draw(){
     background(151);
-   t.deplacement();
+    t.deplacement();
     rotateX(radians(70));
     rotateZ(radians(angle));
     translate(-width/2, -height/2);
