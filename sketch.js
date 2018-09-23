@@ -4,11 +4,15 @@
 // 2 - car modelisation
 // 3 - car physics
 
+var t;
+
 function setup(){
-    createCanvas(400,400);
-    background(0);
+    createCanvas(400,400, WEBGL);
+    background(151);
+    t = new Terrain(10,10);
 }
 
 function draw(){
-
+    translate(-width/2, -height/2);
+    t.show(width, height);
 }
