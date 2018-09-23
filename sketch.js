@@ -9,7 +9,7 @@ var angle = 0;
 
 function setup(){
     createCanvas(400, 400, WEBGL);
-    frameRate(10);
+    frameRate(1);
     t = new Terrain(10,10);
 
 }
