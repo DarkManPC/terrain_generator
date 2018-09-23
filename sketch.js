@@ -7,12 +7,13 @@
 var t;
 
 function setup(){
-    createCanvas(400,400, WEBGL);
+    createCanvas(400, 400, WEBGL);
     background(151);
     t = new Terrain(10,10);
 }
 
 function draw(){
+    rotateX(1);
     translate(-width/2, -height/2);
     t.show(width, height);
 }
