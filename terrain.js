@@ -18,12 +18,16 @@ class Terrain{
     show(w,h){
         strokeWeight(3);
         noFill();
-        for(var i = 0; i < this.X-1; i++){
-            for(var j = 0; j < this.Y-1; j++){
-                this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
-                    this.vertices[i][j+1].x*w/this.X, this.vertices[i][j+1].y*h/this.Y, this.vertices[i][j+1].z);
-                this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
-                    this.vertices[i+1][j].x*w/this.X, this.vertices[i+1][j].y*h/this.Y, this.vertices[i+1][j].z);
+        for(var i = 0; i < this.X; i++){
+            for(var j = 0; j < this.Y; j++){
+                if(j!=this.Y-1){
+                    this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
+                        this.vertices[i][j+1].x*w/this.X, this.vertices[i][j+1].y*h/this.Y, this.vertices[i][j+1].z);
+                }
+                if(i!=this.X-1){
+                    this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
+                        this.vertices[i+1][j].x*w/this.X, this.vertices[i+1][j].y*h/this.Y, this.vertices[i+1][j].z);
+                }
             }
         }
     }
