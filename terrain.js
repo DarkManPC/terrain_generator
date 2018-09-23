@@ -16,15 +16,13 @@ class Terrain{
     }
 
     deplacement(){
-        for(var i = 0; i < this.vertices.length; i++){
-            for(var j = 0; j < this.vertices.length; j++){
-                if(j==this.vertices.length-1){
-                    this.vertices[i][j] = createVector(i,j,Math.floor(Math.random() * Math.floor(2))-1);
-                }
-                else {
-                    this.vertices[i][j]=this.vertices[i+1][j+1];
-                }
+        for(var i = 0; i < this.X; i++){
+            for(var j = 0; j < this.Y-1; j++){
+                this.vertices[i][j]=this.vertices[i][j+1];
             }
+        for(var i = 0; i < this.Y; i++){
+            this.vertices[i][this.Y]= createVector(i,this.Y,2)
+        }
     }
 }
 
