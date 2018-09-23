@@ -15,6 +15,17 @@ class Terrain{
         }
     }
 
+    deplacement(){
+        for(var i = 0; i < this.X; i++){
+            for(var j = 0; j < this.Y-1; j++){
+                this.vertices[i][j]=this.vertices[i][j+1];
+            }
+        for(var i = 0; i < this.Y; i++){
+            this.vertices[i][this.Y]= createVector(i,this.Y,2)
+        }
+    }
+}
+
     show(w,h){
         strokeWeight(3);
         noFill();
