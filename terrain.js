@@ -11,25 +11,25 @@ class Terrain{
         for(var i = 0; i < this.X; i++){
             this.vertices[i] = [];
             for(var j = 0; j < this.Y; j++){
-                this.vertices[i][j] = createVector(i,j,random(10,50));
+                this.vertices[i][j] = createVector(i,j,random(0,10));
             }
         }
     }
 
     deplacement(){
-        for(var i = 0; i < this.X; i++){
-            for(var j = 0; j < this.Y-1; j++){
-                this.vertices[i][j]=createVector(this.vertices[i][j+1].x, this.vertices[i][j+1].y, this.vertices[i][j+1].z);
+        for(var i = 0; i < this.X-1; i++){
+            for(var j = 0; j < this.Y; j++){
+                this.vertices[i][j]=createVector(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i+1][j].z);
             }
         }
-        for(var i = 0; i < this.X; i++){
-            this.vertices[i][this.Y]= createVector(i,this.Y,2)
+        for(var i = 0; i < this.Y; i++){
+            this.vertices[this.X-1][i]= createVector(this.X-1, i, random(0,10));
         }
     }
 
 
     show(w,h){
-        strokeWeight(3);
+        strokeWeight(1);
         noFill();
         for(var i = 0; i < this.X; i++){
             for(var j = 0; j < this.Y; j++){
