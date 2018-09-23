@@ -18,10 +18,10 @@ class Terrain{
     show(w,h){
         strokeWeight(3);
         noFill();
-        beginShape(POINTS);
+        beginShape(TRIANGLES);
         for(var i = 0; i < this.X; i++){
             for(var j = 0; j < this.Y; j++){
-                vertex(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y);
+                vertex(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, -10);
             }
         }
         endShape();
