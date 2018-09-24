@@ -1,5 +1,4 @@
 class Terrain{
-    //3 conneries
     constructor(x,y){
         this.X = x;
         this.Y = y;
