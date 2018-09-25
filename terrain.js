@@ -22,10 +22,13 @@ class Terrain{
             }
         }
         for(var i = 0; i < this.Y; i++){
-            this.vertices[this.X-1][i]= createVector(this.X-1, i, random(0,10));
+            this.vertices[this.X-1][i]= createVector(this.X-1, i, this.vertices[this.X-1][i].z+random(-2,2));
         }
     }
 
+    reliefZ(){
+        
+    }
 
     show(w,h){
         strokeWeight(1);
