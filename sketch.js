@@ -8,9 +8,9 @@ var t;
 var angle = 0;
 
 function setup(){
-    createCanvas(800, 800, WEBGL);
-    frameRate(30);
-    t = new Terrain(50,50);
+    createCanvas(1000, 800, WEBGL);
+    //frameRate(30);
+    t = new Terrain(75,75);
 
 }
 
@@ -18,8 +18,8 @@ function draw(){
     background(151);
     t.deplacement();
     rotateX(radians(70));
-    //rotateZ(radians(angle));
+    rotateZ(radians(angle));
     translate(-width/2, -height/2);
     t.show(width, height);
-    //angle++;
+    angle++;
 }
