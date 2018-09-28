@@ -10,7 +10,7 @@ class Terrain{
         for(var i = 0; i < this.X; i++){
             this.vertices[i] = [];
             for(var j = 0; j < this.Y; j++){
-                this.vertices[i][j] = createVector(i,j,0);//random(0,10));
+                this.vertices[i][j] = createVector(i,j,0);
             }
         }
     }
@@ -33,32 +33,10 @@ class Terrain{
 
     show(w,h){
         strokeWeight(0.8);
-        fill(50,170,30, 150);;
-        /*for(var i = 0; i < this.X-1; i++){
-            for(var j = 0; j < this.Y-1; j++){
-                
-                if(j!=this.Y-1){
-                    this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
-                        this.vertices[i][j+1].x*w/this.X, this.vertices[i][j+1].y*h/this.Y, this.vertices[i][j+1].z);
-                }
-                if(i!=this.X-1){
-                    this.drawLine(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z,
-                        this.vertices[i+1][j].x*w/this.X, this.vertices[i+1][j].y*h/this.Y, this.vertices[i+1][j].z);
-                }
-                
-               beginShape();
-               vertex(this.vertices[i][j].x*w/this.X, this.vertices[i][j].y*h/this.Y, this.vertices[i][j].z);
-               vertex(this.vertices[i+1][j].x*w/this.X, this.vertices[i+1][j].y*h/this.Y, this.vertices[i+1][j].z);
-               vertex(this.vertices[i+1][j+1].x*w/this.X, this.vertices[i+1][j+1].y*h/this.Y, this.vertices[i+1][j+1].z);
-               vertex(this.vertices[i][j+1].x*w/this.X, this.vertices[i][j+1].y*h/this.Y, this.vertices[i][j+1].z);
-               endShape(CLOSE);
-            }
-        }*/
+        fill(50,170,30, 150);
         for (var y = 0; y < this.Y-1; y++) {
             beginShape(TRIANGLE_STRIP);
             for (var x = 0; x < this.X; x++) {
-             // vertex(x*scl, y*scl, terrain[x][y]);
-              //vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
               vertex(this.vertices[x][y].x*w/this.X, this.vertices[x][y].y*h/this.Y, this.vertices[x][y].z);
               vertex(this.vertices[x][y].x*w/this.X, this.vertices[x][y+1].y*h/this.Y, this.vertices[x][y+1].z);
             }

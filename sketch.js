@@ -35,7 +35,9 @@ function draw(){
 function slider(x1, x2, y, min, max){
     strokeWeight(2);
     line(x1,y,x2,y);
-    if(mouseIsPressed && (mouseX-width/2 > m_X-10 && mouseX-width/2 < m_X+10) && (mouseY-height/2 > y-10 && mouseY-height/2 < y+10)){
+    if(mouseIsPressed 
+        && (mouseX-width/2 >= m_X-10 && mouseX-width/2 <= m_X+10) && (mouseY-height/2 >= y-10 && mouseY-height/2 <= y+10)
+        && (mouseX-width/2 >= x1 && mouseX-width/2 <= x2)){
         m_X = mouseX-width/2;
     }
     ellipse(m_X,y,10,10);
