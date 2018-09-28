@@ -13,7 +13,7 @@ var fps = 0;
 function setup(){
     createCanvas(1000, 800, WEBGL);
     //frameRate(30);
-    t = new Terrain(75,75);
+    t = new Terrain(100,75);
     c = new Car();
 
 }

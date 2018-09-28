@@ -32,7 +32,7 @@ class Terrain{
     }
 
     show(w,h){
-        strokeWeight(0.8);
+        strokeWeight(1);
         stroke(50);
         fill(50,170,30);
         for (var y = 0; y < this.Y-1; y++) {
