@@ -28,6 +28,7 @@ function draw(){
     rotateZ(radians(angle));
     translate(-width/2, -height/2);
     t.show(width, height);
+    c.show();
     pop();
     drawFPS(-480, -380);
     angle = slider(380,480,-380,0,360);
