@@ -33,6 +33,7 @@ class Terrain{
 
     show(w,h){
         strokeWeight(0.8);
+        stroke(50);
         fill(50,170,30, 150);
         for (var y = 0; y < this.Y-1; y++) {
             beginShape(TRIANGLE_STRIP);
