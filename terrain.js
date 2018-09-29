@@ -16,6 +16,7 @@ class Terrain{
     }
 
     deplacement(){
+        // make a perlin noise version
         for(var i = 0; i < this.X-1; i++){
             for(var j = 0; j < this.Y; j++){
                 this.vertices[i][j]=createVector(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i+1][j].z);
