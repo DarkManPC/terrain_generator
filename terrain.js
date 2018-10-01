@@ -3,6 +3,7 @@ class Terrain{
         this.X = x;
         this.Y = y;
         this.init();
+        this.xoff = 0;
     }
 
     init(){
@@ -17,11 +18,13 @@ class Terrain{
 
     deplacement(){
         // make a perlin noise version
-        for(var i = 0; i < this.X-1; i++){
+        for(var i = 0; i < this.X; i++){
             for(var j = 0; j < this.Y; j++){
-                this.vertices[i][j]=createVector(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i+1][j].z);
+                this.vertices[i][j].z=map(noise(i*0.1+this.xoff,j*0.1),0,1,-30,30); //=createVector(this.vertices[i][j].x, this.vertices[i][j].y, this.vertices[i+1][j].z);
             }
+            this.xoff += 0.0005;
         }
+        /*
         for(var i = 0; i < this.Y; i++){
             if (i == 0){
                 this.vertices[this.X-1][i]= createVector(this.X-1, i, this.vertices[this.X-1][i].z+random(-10,10));
@@ -30,6 +33,7 @@ class Terrain{
                 this.vertices[this.X-1][i]= createVector(this.X-1, i, (this.vertices[this.X-1][i].z + this.vertices[this.X-1][i-1].z)/2+random(-2,2));
             }
         }
+        */
     }
 
     show(w,h){

@@ -21,9 +21,9 @@ function setup(){
 function draw(){
     background(151);
     push();
-    if(frameCount%4==0){
+    //if(frameCount%4==0){
         t.deplacement();
-    }
+    //}
     rotateX(radians(70));
     rotateZ(radians(angle));
     translate(-width/2, -height/2);
